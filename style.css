@@ -419,6 +419,9 @@ a{
     .hero-1>p {
         text-align: center;
     }
+    .card{
+        padding: 20px;
+    }
 }
 
 

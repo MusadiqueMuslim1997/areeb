@@ -45,6 +45,12 @@ nav {
 
 .new-logo {
     color: #f97316;
+    
+  
+}
+.hero-1>span{
+    text-transform: capitalize;
+      font-size: 1.2rem; 
 }
 
 
@@ -147,20 +153,29 @@ nav>.ul>ul>li>a {
 }
 
 .hero-1 {
-    width: 50%;
-    color: #0f172a;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    font-weight: 500;
+  width: 45%;
+ background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.2);
+color: #f1f5f9;
+padding: 30px;
+}
+
+.hero-1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-1 h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .hero-1 p {
-    background: linear-gradient(90deg, #0ea5e9, #0284c7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 600;
-    
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #0ea5e9; /* ✅ bright readable blue-white text */
 }
 
 
@@ -213,7 +228,9 @@ nav>.ul>ul>li>a {
     }
 
     .hero-2 img {
-        width: 80%;
+        width: 100%;
+        position: relative;
+        margin-bottom: -20px;
     }
 }
 

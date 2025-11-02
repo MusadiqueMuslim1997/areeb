@@ -266,7 +266,13 @@ h2 {
 .hero-2 img:hover {
     transform: scale(1.05);
 }
-
+@media screen and (max-width:1120px){
+    .hero-2>img{
+        position: relative;
+        padding-bottom: -200px;
+        width: 100%;
+    }
+}
 @media (max-width: 900px) {
     .hero {
         flex-direction: column-reverse;

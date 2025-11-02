@@ -182,17 +182,34 @@ nav>.ul>ul>li>a {
     padding: 30px;
 }
 
-.hero>.hero-1>h1,
+.hero > .hero-1 > h1,
 h2 {
-    color: #0ea5e9;
+  color: #0ea5e9;
 }
 
-.hero-1>h2 {
-    padding: 20px;
-    border: 2px solid transparent;
-    border-image: linear-gradient(90deg, #3b82f6, #06b6d4);
-    border-image-slice: 1;
+/* Gradient border */
+.hero-1 > h2 {
+  padding: 20px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #3b82f6, #06b6d4);
+  border-image-slice: 1;
+  display: inline-block;
+  animation: slideDown 1.2s ease-out forwards;
+  opacity: 0; /* animation se pehle hidden */
 }
+
+/* 🔥 Slide-from-top animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 .hero-1:hover {
     transform: translateY(-5px);

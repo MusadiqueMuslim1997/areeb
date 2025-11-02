@@ -169,7 +169,14 @@ border: 1px solid rgba(255,255,255,0.2);
 color: #f1f5f9;
 padding: 30px;
 }
-
+.name{
+     border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #0ea5e9, #9333ea, #3b82f6);
+  border-image-slice: 1;
+  border-radius: 15px;
+  padding: 8px;
+  text-transform: uppercase;
+}
 .hero-1:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);

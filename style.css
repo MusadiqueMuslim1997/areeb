@@ -189,6 +189,7 @@ h2 {
 
 /* Gradient border */
 .hero-1 > h2 {
+    width: 100%;
   padding: 20px;
   border: 2px solid transparent;
   border-image: linear-gradient(90deg, #3b82f6, #06b6d4);
@@ -196,6 +197,9 @@ h2 {
   display: inline-block;
   animation: slideDown 1.2s ease-out forwards;
   opacity: 0; /* animation se pehle hidden */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 
 /* 🔥 Slide-from-top animation */
@@ -226,6 +230,7 @@ h2 {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #0ea5e9;
+    text-align: justify;
     /* ✅ bright readable blue-white text */
 }
 

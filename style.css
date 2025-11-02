@@ -266,6 +266,17 @@ h2 {
 .hero-2 img:hover {
     transform: scale(1.05);
 }
+.card{
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #e0f7ff, #f8fafc);
+   
+}
 @media screen and (max-width:1120px){
     .hero-2>img{
         position: relative;
@@ -279,7 +290,7 @@ h2 {
         text-align: center;
         padding: 40px 20px;
     }
-
+     
     .hero-1,
     .hero-2 {
         width: 100%;
@@ -334,6 +345,9 @@ h2 {
 
     #check:checked~.ul {
         right: 0;
+    }
+    .hero-1>p{
+        text-align: center;
     }
 }
 

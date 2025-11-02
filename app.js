@@ -39,3 +39,52 @@ function activeContact() {
 }
 
 contact.addEventListener('click', activeContact)
+
+
+
+let videoData = [
+    {
+        title: "Fast Food Add",
+        videoSrc: "./videos/FAST FOOD AD.mp4" 
+    },
+    {
+        title: "Milk Shake Add",
+        videoSrc: "./videos/MILK SHAKE AD.mp4" 
+    },
+
+ {
+        title: "Nescafe Coffee Motion Add",
+        videoSrc: "./videos/Nescafe Coffee Motion Ad.mp4" 
+    },
+    {
+        title: "Refrigrator Shop Add",
+        videoSrc: "./videos/REFRIGERATION SHOP AD..mp4" 
+    },
+];
+
+
+const cardsContainer = document.getElementById('cardRander');
+
+cardsContainer.innerHTML = ''; 
+
+
+videoData.forEach(item => {
+
+    const cardHTML = `
+        <div class="card-1">
+            <div class="card-img">
+                <video src="${item.videoSrc}" 
+                       loop 
+                       muted 
+                       playsinline 
+                       controls>
+                </video>
+            </div>
+            <div class="card-title">${item.title}</div>
+        </div>
+    `;
+
+   
+    cardsContainer.innerHTML += cardHTML;
+});
+

@@ -37,6 +37,7 @@ function activeContact() {
     project.style.backgroundColor = 'transparent'
 
 }
+contact.addEventListener('click', activeContact)
 document.addEventListener("DOMContentLoaded", () => {
 
     // VIDEO DATA

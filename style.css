@@ -44,20 +44,17 @@ nav {
         /* sky blue */
     }
 
-    25% {
+    333% {
         color: #3b82f6;
         /* medium blue */
     }
 
-    50% {
+    66% {
         color: #9333ea;
         /* purple */
     }
 
-    75% {
-        color: #f97316;
-        /* orange accent */
-    }
+
 
     100% {
         color: #0ea5e9;
@@ -256,6 +253,7 @@ h2 {
     transform: translateY(-5px);
     box-shadow: 0 20px 45px rgba(14, 165, 233, 0.45);
 }
+
 .hero-1:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 45px rgba(14, 165, 233, 0.45);
@@ -356,6 +354,7 @@ h2 {
 a {
     text-decoration: none;
 }
+
 .card {
     width: 100%;
     padding: 20px 40px;
@@ -369,27 +368,31 @@ a {
     gap: 20px;
 }
 
-.card-1, .gallery-card {
+.card-1,
+.gallery-card {
     width: 300px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(14,165,233,0.3);
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
     cursor: pointer;
     background-color: #1A0B2E;
     transition: transform 0.3s;
 }
 
-.card-1:hover, .gallery-card:hover {
+.card-1:hover,
+.gallery-card:hover {
     transform: scale(1.05);
 }
 
-.card-img video, .gallery-card img {
+.card-img video,
+.gallery-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.card-title, .gallery-card .title {
+.card-title,
+.gallery-card .title {
     text-align: center;
     padding: 10px;
     color: #fff;
@@ -398,11 +401,11 @@ a {
 /* MODAL */
 .modal {
     position: fixed;
-    inset:0;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0;
     pointer-events: none;
     transition: 0.2s;
@@ -410,7 +413,7 @@ a {
 }
 
 .modal.open {
-    opacity:1;
+    opacity: 1;
     pointer-events: auto;
 }
 
@@ -423,7 +426,8 @@ a {
     text-align: center;
 }
 
-.modal-image, .modal-video {
+.modal-image,
+.modal-video {
     width: 100%;
     max-height: 80vh;
     display: block;
@@ -437,26 +441,114 @@ a {
 
 .close-btn {
     position: absolute;
-    top:10px;
-    right:10px;
-    font-size:20px;
-    background:#fff;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
-    padding:5px 10px;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contact-section {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #1A0B2E;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-head h2 {
+    display: inline-block;
+    /* zaroori hai taake border text ke around ho */
+    padding: 10px 20px;
+    /* border aur text ke beech gap */
+    border: 2px solid;
+
+    border-image: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border-image-slice: 1;
+    text-transform: uppercase;
+    /* optional */
+
+}
+
+/* agar highlight ke liye alag style chahiye */
+.contact-head .highlight {
+    color: #06b6d4;
+    /* blue accent */
 }
 
 
+.contact-head h2 .highlight {
+    color: #00BFFF;
+
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background: #111;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card i {
+    font-size: 2rem;
+    transition: transform 0.3s;
+}
+
+/* Hover effects with different colors */
+.contact-card.whatsapp:hover i {
+    color: #25D366;
+    /* WhatsApp green */
+}
+
+.contact-card.email:hover i {
+    color: #1DA1F2;
+    /* Blue for email */
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.45);
+}
+
+/* Responsive */
+@media(max-width: 800px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
 /* RESPONSIVE */
 @media(max-width: 800px) {
-    .card-1, .gallery-card {
+
+    .card-1,
+    .gallery-card {
         width: 45%;
     }
 }
 
 @media(max-width: 500px) {
-    .card-1, .gallery-card {
+
+    .card-1,
+    .gallery-card {
         width: 90%;
     }
 }

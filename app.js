@@ -53,11 +53,11 @@ let videoData = [
     },
 
  {
-        title: "Nescafe Coffee Motion Add",
+        title: "Nescafe Coffee Add",
         videoSrc: "./videos/Nescafe Coffee Motion Ad.mp4" 
     },
     {
-        title: "Refrigrator Shop Add",
+        title: "Refrigerator Shop Add",
         videoSrc: "./videos/REFRIGERATION SHOP AD..mp4" 
     },
 ];

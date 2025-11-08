@@ -37,14 +37,11 @@ function activeContact() {
     project.style.backgroundColor = 'transparent'
 
 }
-
-contact.addEventListener('click', activeContact)
-
-// VIDEO DATA
 document.addEventListener("DOMContentLoaded", () => {
 
     // VIDEO DATA
     const videoData = [
+        { title: "Irshad Traders Add", videoSrc: "./videos/irshad.mp4" },
         { title: "Fast Food Add", videoSrc: "./videos/FAST FOOD AD.mp4" },
         { title: "Milk Shake Add", videoSrc: "./videos/MILK SHAKE AD.mp4" },
         { title: "Nescafe Coffee Add", videoSrc: "./videos/Nescafe Coffee Motion Ad.mp4" },
@@ -53,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cardsContainer = document.getElementById('cardRander');
 
+    // Render video cards
     videoData.forEach(item => {
         const card = document.createElement("div");
         card.classList.add("card-1");
@@ -77,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const imageContainer = document.getElementById("imageRander");
+
+    // Render image cards
     imageData.forEach(img => {
         const card = document.createElement("div");
         card.classList.add("gallery-card");
@@ -86,20 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.innerHTML = `
             <img src="${img.src}" alt="${img.title}">
-            <div class="title">${img.title}</div>
+            <div class="title" style="text-align:center;">${img.title}</div>
         `;
         imageContainer.appendChild(card);
     });
 
-    // MODAL
+    // CREATE MODAL
     const modal = document.createElement("div");
     modal.classList.add("modal");
     modal.innerHTML = `
         <div class="modal-content">
             <button class="close-btn">&times;</button>
             <img class="modal-image" src="" alt="" style="display:none;">
-            <video class="modal-video" controls style="display:none;"></video>
-            <div class="caption"></div>
+            <video class="modal-video" controls style="display:none; max-height:80vh;"></video>
+            <div class="caption" style="text-align:center; color:white;"></div>
         </div>
     `;
     document.body.appendChild(modal);
@@ -109,10 +109,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const captionEl = modal.querySelector(".caption");
     const closeBtn = modal.querySelector(".close-btn");
 
-    // OPEN MODAL VIDEO
+    // STOP ALL CARD VIDEOS
+    function stopAllCardVideos() {
+        document.querySelectorAll(".card-1 video").forEach(v => {
+            v.pause();
+            v.currentTime = 0;
+        });
+    }
+
+    // ✅ STOP OTHER VIDEOS WHEN ONE CARD VIDEO PLAYS
+    const allCardVideos = document.querySelectorAll(".card-1 video");
+    allCardVideos.forEach(video => {
+        video.addEventListener("play", () => {
+            allCardVideos.forEach(v => {
+                if(v !== video){
+                    v.pause();
+                    v.currentTime = 0;
+                }
+            });
+        });
+    });
+
+    // OPEN VIDEO MODAL
     cardsContainer.addEventListener("click", e => {
         const card = e.target.closest(".card-1");
-        if(!card) return;
+        if (!card) return;
+
+        stopAllCardVideos();
+
         modalVideo.src = card.dataset.src;
         modalVideo.style.display = "block";
         modalVideo.play();
@@ -124,14 +148,18 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "hidden";
     });
 
-    // OPEN MODAL IMAGE
+    // OPEN IMAGE MODAL
     imageContainer.addEventListener("click", e => {
         const card = e.target.closest(".gallery-card");
-        if(!card) return;
+        if (!card) return;
+
+        stopAllCardVideos();
+
         modalImage.src = card.dataset.src;
         modalImage.style.display = "block";
 
         modalVideo.pause();
+        modalVideo.src = "";
         modalVideo.style.display = "none";
 
         captionEl.textContent = card.dataset.title;
@@ -142,6 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CLOSE MODAL
     function closeModal() {
         modal.classList.remove("open");
+
         modalVideo.pause();
         modalVideo.src = "";
         modalVideo.style.display = "none";
@@ -154,6 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     closeBtn.addEventListener("click", closeModal);
     modal.addEventListener("click", e => {
-        if(e.target === modal) closeModal();
+        if (e.target === modal) closeModal();
     });
+
+    // Optional: pause card videos on scroll
+    window.addEventListener("scroll", stopAllCardVideos);
+
 });

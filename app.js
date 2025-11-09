@@ -70,9 +70,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // IMAGE DATA
     const imageData = [
-        { src: "./images/anime-logo.jpg", title: "Anime Logo" },
+        { src: "./images/business-poster.jpg", title: "Business Poster" },
+        { src: "./images/pizza-poster.jpg", title: "Pizza Poster" },
+        { src: "./images/pizza-poster-1.jpg", title: "Pizza Poster" },
+        { src: "./images/sport-poster.jpg", title: "Sport Poster" },
+        { src: "./images/trip-post-design.jpg", title: "Trip Post" },
+        { src: "./images/trip-post-design-1.jpg", title: "Trip Post" },
+        { src: "./images/milk-tea-post.jpg", title: "Milk Tea Post" },
         { src: "./images/profile-pic.jpg", title: "Profile Picture" },
-        { src: "./images/service.jpg", title: "My Services" }
+        { src: "./images/service.jpg", title: "My Services" },
+        { src: "./images/academy-posture.png", title: "Academy Poster" },
+        { src: "./images/english-language-poster.png", title: "English Language Poster" },
+        { src: "./images/admit-card.jpg", title: "Admit Card (Front-side)" },
+        { src: "./images/backside-admit-card.jpg", title: "Admit Card (Back-side)" },
+        { src: "./images/date-sheet.jpg", title: "Date Sheet" },
+        
+
     ];
 
     const imageContainer = document.getElementById("imageRander");
@@ -123,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     allCardVideos.forEach(video => {
         video.addEventListener("play", () => {
             allCardVideos.forEach(v => {
-                if(v !== video){
+                if (v !== video) {
                     v.pause();
                     v.currentTime = 0;
                 }
